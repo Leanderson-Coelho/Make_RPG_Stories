@@ -7,5 +7,5 @@ Aplicativo que auxilia na criação de histórias RPG. Desde história simples a
 Ian Carneiro Teixeira de Araújo (ianteixeiraaraujo@gmail.com), <br/>
 Leanderson Coelho dos Santos (leanderson.coelhoif@gmail.com) <br/>
 ### Parcerias
-Mailson Dennis (mailssondennis@gmail.com)
+Mailson Dennis (mailssondennis@gmail.com) <br/>
 Camila Carwalho (camilacarwalho3@gmail.com)
