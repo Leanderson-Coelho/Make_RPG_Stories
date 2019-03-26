@@ -28,7 +28,32 @@
     <div class="row">
         <div class="col l4" style="border: 1px solid black">
             <div id="cy"></div>
-        </div>    
+        </div>
+        <div class="col l8" style="border: 1px solid black">
+			<div class="row">
+				<label>Titulo</label>
+				<input type="text" name="titulo">
+			</div>
+			<div class="row">
+				<label>Descrição</label>
+				<input type="text" name="descricao">
+			</div>
+			<div class="row">
+				<div class="col l3 center">
+					<input type="submit" name="btn-node" value="Node">
+				</div>
+				<div class="input-field col l6">
+					<select>
+						<option value="1">Cajazeiras</option>
+						<option value="2">Itaporanga</option>
+						<option value="3">Milagres</option>
+					</select>
+				</div>
+				<div class="col l3 center">
+					<input type="submit" name="btn-branch" value="Branch">
+				</div>
+			</div>
+		</div>   
     </div>
     <!-- CARREGA O GRÁFICO -->
     <?php
