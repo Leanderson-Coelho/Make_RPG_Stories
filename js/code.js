@@ -34,19 +34,23 @@ var cy = window.cy = cytoscape({
     }
   ],
 
-  elements: {
-    nodes: [
-      { data: { id: 'n0' } },
-      { data: { id: 'n1' } },
-      { data: { id: 'n2' } },
-      { data: { id: 'n3' } }
-    ],
-    edges: [
-      { data: { source: 'n0', target: 'n1' } },
-      { data: { source: 'n1', target: 'n2' } },
-      { data: { source: 'n1', target: 'n3' } }
-    ]
-  },
+  elements: fetch('data.php').then(toJson),
+
+
+
+  // {
+  //   nodes: [
+  //     { data: { id: 'n0' } },
+  //     { data: { id: 'n1' } },
+  //     { data: { id: 'n2' } },
+  //     { data: { id: 'n3' } }
+  //   ],
+  //   edges: [
+  //     { data: { source: 'n0', target: 'n1' } },
+  //     { data: { source: 'n1', target: 'n2' } },
+  //     { data: { source: 'n1', target: 'n3' } }
+  //   ]
+  // }
 });
 
 cy.zoomingEnabled(false);
