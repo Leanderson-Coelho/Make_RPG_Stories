@@ -24,7 +24,6 @@
 					'height': 10
 				}
 			},
-
 			{
 				selector: 'edge',
 				style: {

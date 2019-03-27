@@ -1,6 +1,7 @@
 <!DOCTYPE>
 <html>
 <head>
+<<<<<<< HEAD
 	<title>Make RPG Stories</title>
 	<!-- CYTOSCAPE -->
 	<!-- START -->
