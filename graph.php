@@ -40,7 +40,11 @@
 		cy.zoomingEnabled(false);
 
 		cy.on('click', 'node', function(evt){
-			console.log( 'clicked ' + this.id() );
+			$("#predecessor").val(this.id());
 		});
+
+		$("#butao").click(function (){
+			$("#butao").val("MUDOU");
+		})
 	});
 </script>
