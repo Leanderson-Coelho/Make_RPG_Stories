@@ -40,7 +40,10 @@
               elements: {
                 nodes: [
                 // CARREGA OS NODOS DO BANCO
-                <?php include("js/data.php") ?>
+                <?php 
+                  include("js/data.php"); 
+                ?>
+                
                 ],
                 edges: [
 
