@@ -30,8 +30,11 @@
 		<div class="col l4" style="border: 1px solid black">
 			<div id="cy"></div>
 		</div>
-		<form>
+		<form action="controllers/criarNodos.php" method="POST">
 			<div class="col l8" style="border: 1px solid black">
+				<div class="row">
+					<input type="text" name="predecessor" hidden readonly id="predecessor">
+				</div>
 				<div class="row">
 					<label>Titulo</label>
 					<input type="text" name="titulo">
@@ -57,7 +60,7 @@
 					</div>
 				</div>
 			</div>
-		</form>   
+		</form>
 	</div>
 	<!-- CARREGA O GRÁFICO -->
 	<?php

@@ -1,16 +1,20 @@
 <?php
-require_once __DIR__ ."/vendor/autoload.php";
+require_once __DIR__ ."/../vendor/autoload.php";
 
 
-createNodes("Qualquer coisa2", "1");
-function createNodes(string $titulo, string $idNodoAnterior=""){
+$idNodoAnterior = $_POST['predecessor'];
+$titulo = $_POST['titulo'];
+$descricao = $_POST['descricao'];
+createNodes($titulo,$descricao,$idNodoAnterior);
+function createNodes(string $titulo, string $descricao, string $idNodoAnterior=""){
 	$collection = (new MongoDB\Client)->makerpg->nodes;
 	$id=gerarId();
 	$nodes = [
 		'data'=> [
-			'id'=>$id
+			'id'=>$id,
+			'titulo'=>$titulo,
+			'descricao'=>$descricao
 		],
-		'titulo'=>$titulo,
 	];
 	$collection->insertOne($nodes);
 
@@ -52,5 +56,5 @@ function gerarId(){
 	}
 	return (string)$a;
 }
-
+header('location:../index.php');
 ?>
