@@ -33,7 +33,7 @@
 		<div class="col l8" style="border: 1px solid black">
 			<form action="controllers/criarNodos.php" method="POST">
 				<div class="row">
-					<input type="text" name="predecessor" id="predecessor">
+					<input type="text" name="predecessor" hidden readonly id="predecessor">
 				</div>
 				<div class="row">
 					<label>Titulo</label>
@@ -45,7 +45,7 @@
 				</div>
 				<div class="row">
 					<div class="col l3 center">
-						<input type="submit" name="submit" id="Node" value="Node" disabled>
+						<input type="submit" name="submit" id="Node" value="Node">disabled
 					</div>
 					<div class="input-field col l6">
 						<select>
@@ -77,22 +77,34 @@
 							<div class="input-field">
 								<input type="button" id="limpar" value="Limpar"/>
 								<input type="submit" name="submit" value="Mesclar"/>
-
 							</div>
 						</form>
-					</div>
-				</label>	
+					</div>	
+				</div>
 			</div>
-
+			<div class="row">
+				<div class="col l12 m6">
+					<div class="card blue-grey darken-1">
+						<div class="card-content white-text">
+							<span class="card-title" id="cardTitulo">Card Title</span>
+							<p id="cardConteudo">I am a very simple card. I am good at containing small bits of information.
+							I am convenient because I require little markup to use effectively.</p>
+						</div>
+						<!-- <div class="card-action">
+							<a href="#">This is a link</a>
+							<a href="#">This is a link</a>
+						</div> -->
+					</div>
+				</div>
+			</div>
 		</div>
-	</div>
 
-</div>
-<!-- CARREGA O GRÁFICO -->
-<?php
-include("graph.php");
-?>
-<!-- CONTROLE DE INTERFACE -->
-<script src="js/controleInterface.js"></script>
+	</div>
+	<!-- CARREGA O GRÁFICO -->
+	<?php
+	include("graph.php");
+	?>
+	<!-- CONTROLE DE INTERFACE -->
+	<script src="js/controleInterface.js"></script>
 </body>
 </html>
