@@ -15,7 +15,7 @@
 			{
 				selector: 'node',
 				style: {
-					'content': 'data(id)',
+					'content': 'data(titulo)',
 					'text-opacity': 0.5,
 					'text-valign': 'center',
 					'text-halign': 'right',
