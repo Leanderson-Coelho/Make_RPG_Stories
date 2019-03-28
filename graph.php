@@ -15,7 +15,7 @@
 			{
 				selector: 'node',
 				style: {
-					'content': 'data(id)',
+					'content': 'data(titulo)',
 					'text-opacity': 0.5,
 					'text-valign': 'center',
 					'text-halign': 'right',
@@ -41,6 +41,7 @@
 
 		cy.on('click', 'node', function(evt){
 			$("#predecessor").val(this.id());
+			console.log(this);
 			if($("#from").val()==""){
 				$("#from").val(this.id());
 				$("#Node").prop("disabled", false);

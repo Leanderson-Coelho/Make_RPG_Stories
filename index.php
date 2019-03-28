@@ -45,7 +45,7 @@
 				</div>
 				<div class="row">
 					<div class="col l3 center">
-						<input type="submit" name="submit" id="Node" value="Node" disabled>
+						<input type="submit" name="submit" id="Node" value="Node" >
 					</div>
 					<div class="input-field col l6">
 						<select>

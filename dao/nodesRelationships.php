@@ -16,7 +16,7 @@ $cursor = $nodos->find();
 $conteudo = 'elements: { nodes: [';
 foreach($cursor as $document){
 	$nodo = $document['data'];
-	$conteudo = $conteudo. "{ data: { id: ".$nodo['id']."} },";
+	$conteudo = $conteudo. "{ data: { id: ".$nodo['id'].", titulo:'".$nodo['titulo']."'} },";
 }
 
 $conteudo = $conteudo."], edges: [";
