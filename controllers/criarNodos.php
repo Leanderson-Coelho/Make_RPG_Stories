@@ -1,11 +1,30 @@
 <?php
 require_once __DIR__ ."/../vendor/autoload.php";
 
+$acao = $_POST['submit'];
 
-$idNodoAnterior = $_POST['predecessor'];
-$titulo = $_POST['titulo'];
-$descricao = $_POST['descricao'];
-createNodes($titulo,$descricao,$idNodoAnterior);
+
+if($acao=="Node"){
+	$idNodoAnterior = $_POST['predecessor'];
+	$titulo = $_POST['titulo'];
+	$descricao = $_POST['descricao'];
+	//VERIFICA SE O ID DO PREDECESSOR É VAZIO
+	// if($idNodoAnterior==""){
+		// echo 'if(!$idNodoAnterior=""){';
+		// $collection = (new MongoDB\Client)->makerpg->nodes;
+		// VERIFICA SE EXISTEM MAIS DE UM NÓ, CASO SIM, NÃO SE PODE CRIAR SEM UM PREDECESSOR
+		// if($collection->count()>=1){
+			// echo 'if($collection->count()>1){';
+			// return header('location:../index.php');
+		// }
+	// }
+	createNodes($titulo,$descricao,$idNodoAnterior);
+}else{
+	$idNodoAnterior = $_POST['from'];
+	$id = $_POST['for'];
+	createEdges($idNodoAnterior,$id);
+}
+
 function createNodes(string $titulo, string $descricao, string $idNodoAnterior=""){
 	$collection = (new MongoDB\Client)->makerpg->nodes;
 	$id=gerarId();
@@ -22,7 +41,9 @@ function createNodes(string $titulo, string $descricao, string $idNodoAnterior="
 		createEdges($idNodoAnterior, $id);
 	}
 }
+
 function createEdges($idNodoAnterior, $id){
+
 	$collection = (new MongoDB\Client)->makerpg->relationships;	
 	$edge = [
 		'data'=>[

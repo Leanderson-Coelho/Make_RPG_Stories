@@ -15,7 +15,7 @@
 			{
 				selector: 'node',
 				style: {
-					'content': 'data(titulo)',
+					'content': 'data(id)',
 					'text-opacity': 0.5,
 					'text-valign': 'center',
 					'text-halign': 'right',
@@ -35,16 +35,19 @@
 				}
 			}
 			],
-            <?php include("dao/nodesRelationships.php") ?>	
-        });
+			<?php include("dao/nodesRelationships.php") ?>	
+		});
 		cy.zoomingEnabled(false);
 
 		cy.on('click', 'node', function(evt){
 			$("#predecessor").val(this.id());
-		});
-
-		$("#butao").click(function (){
-			$("#butao").val("MUDOU");
+			if($("#from").val()==""){
+				$("#from").val(this.id());
+				$("#Node").prop("disabled", false);
+			}else{
+				if(this.id()!=$("#from").val())
+					$("#for").val(this.id());
+			}
 		})
 	});
 </script>
