@@ -66,12 +66,18 @@
 						<form action="controllers/criarNodos.php" method="POST">
 							<div class="row">
 								<div class="input-field col l6">
-									<p>De:</p>
-									<input type="text" readonly id="from" name="from"/>	
+									<b class="text-color yellow">De:</b>
+									<!-- CAMPO QUE É MOSTRADO PARA O USUÁIO -->
+									<input type="text" readonly id="fromUsuario" name="fromUsuario"/>
+									<!-- CAMPO QUE É ENVIADO NO FORMULÁRIO -->
+									<input type="text" readonly hidden id="from" name="from"/>	
 								</div>
 								<div class="input-field col l6">
-									<p>Para:</p>
-									<input type="text" readonly name="for" id="for"/>								
+									<b class="text-color green">Para:</b>
+									<!-- CAMPO QUE É MOSTRADO PARA O USUÁIO -->
+									<input type="text" readonly name="forUsuario" id="forUsuario"/>
+									<!-- CAMPO QUE É ENVIADO NO FORMULÁRIO -->
+									<input type="text" readonly hidden name="for" id="for"/>
 								</div>
 							</div>
 							<div class="input-field">
