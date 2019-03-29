@@ -1,5 +1,4 @@
 <script type="text/javascript">
-
 	$( document ).ready(function() {
 		var cy = window.cy = cytoscape({
 			container: document.getElementById('cy'),
@@ -72,8 +71,11 @@
 			ele.connectedEdges().style({ 'line-color': '#FAFAFA' });
 		});*/
 		cy.on('click', 'node', function(evt){
-			$("#predecessor").val($(this.id()).val());
-			$("#cardTitulo").val()
+			<?php include("buscarDadosNodos.php") ?>
+			$("#predecessor").val(this.id());
+			$("#cardTitulo").text(this.data('titulo'));
+			$("#cardConteudo").text(descricao);
+			console.log(descricao);
 			if($("#from").val()==""){
 				$("#from").val(this.id());
 				$("#Node").prop("disabled", false);
@@ -85,3 +87,4 @@
 		})
 	});
 </script>
+<?php include("dao/nodesRelationships.php") ?>
