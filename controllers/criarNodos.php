@@ -45,14 +45,22 @@ function createNodes(string $titulo, string $descricao, string $idNodoAnterior="
 function createEdges($idNodoAnterior, $id){
 
 	$collection = (new MongoDB\Client)->makerpg->relationships;	
-	$edge = [
-		'data'=>[
-			'id'=>$idNodoAnterior."e".$id,
-			'source'=>$idNodoAnterior,
-			'target'=>$id
-		],
+	// Verificando se já existe relação
+	$condicao = [
+		'data.id' => $idNodoAnterior."e".$id,
 	];
-	$collection->insertOne($edge);
+	$busca = $collection->findOne($condicao);
+	if($busca==null){
+		$edge = [
+			'data'=>[
+				'id'=>$idNodoAnterior."e".$id,
+				'source'=>$idNodoAnterior,
+				'target'=>$id
+			],
+		];
+		$collection->insertOne($edge);
+	}
+	
 }
 
 function gerarId(){

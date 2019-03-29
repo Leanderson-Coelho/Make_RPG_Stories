@@ -46,11 +46,25 @@
 		var COR_FROM = "yellow";
 		var COR_FOR = "green";
 		var COR_NOVO_NODO = "green";
+		// Variavel que fez o controle da div de mesclagem.
+		var buttonDivMesclagem = false;
+		// CONTROLE DE MERGE CORES
+		// lastFor: Ultimo nodo que foi selecionado para ser o nodo que recebe a relação
+		var lastFor = "";
+		// firstFor: Primeiro nodo selecionado para ser o nodo de onde sai a relação
+			// A variavel serve para controle de seleção, caso o usuário tente 
+			// selecionar o primeiro nodo novamente. 
+		var firstFrom = "";
+		// CONTROLE DE MERGE
+		// A variavel serve para fazer o controle de seleção, caso o usuário tente selecionar
+		// outro nodo para ser o correspondido de uma nova relação, o nodo selecionado anteriormente
+		// terá cor padrão.
+		var ultimoNo = "";
+
 
 
 		// CONTROLE DA DIV DE OPÇOES DE MESCLAGEM
 		// ATIVA OU DESATIVA AS CORES POR SELEÇÃO
-		var buttonDivMesclagem = false;
 		$("#trigger-merge").click(function(){
 			if(buttonDivMesclagem==false){
 				buttonDivMesclagem = true;
@@ -63,9 +77,7 @@
 			console.log(buttonDivMesclagem);
 		})
 
-		// CONTROLE DE MERGE CORES
-		var lastFor = "";
-		var firstFrom = "";
+		
 		cy.on('click', 'node', function(evt){
 			if(buttonDivMesclagem){
 				if($("#from").val()==""){
@@ -87,7 +99,6 @@
 			}
 			
 		})
-		// CORES:
 
 		// LIMPAR CORES E VALORES DO FORMULARIO DE MERGE
 		$("#limpar").click(function(){
@@ -98,8 +109,6 @@
 		// PARAMETROS: $limparCores
 					// Se true atribui as cores padrões aos nodos
 					// Caso seja false limpa apenas os campos dos input's
-		// COR PADRÃO:
-		
 		function limpar(limparCores){
 			$("#from").val("");
 			$("#for").val("");
@@ -114,7 +123,6 @@
 		}
 
 		//CONTROLE DE MERGE
-		var ultimoNo = "";
 		cy.on('click', 'node', function(evt){
 			// <START> seleciona o valor do predecessor caso o usuário crie um novo nodo
 			$("#predecessor").val(this.id());
