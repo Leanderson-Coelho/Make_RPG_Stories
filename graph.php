@@ -55,36 +55,116 @@
 		});
 		cy.maxZoom(2);
 		cy.minZoom(0.5);
-		cy.viewport({
-			zoom: 0.8,
 
-		});
-		// cy.$('node:selected').neighborhood('edge').style( { 'line-color' : 'black' }); 
-		// cy.$('node:selected').connectedEdges().style( { 'line-color' : 'black' });
-		// cy.$('node').on('grab', function (e) {
-		// 	var ele = e.target;
-		// 	ele.neighborhood('edge').style( { 'line-color' : 'black' }); 
-		// });
+		// CORES PADRAO
+		var COR_PADRAO = "blue";
+		var COR_FROM = "yellow";
+		var COR_FOR = "green";
+		var COR_NOVO_NODO = "green";
 
-		/*cy.$('node').on('free', function (e) {
-			var ele = e.target;
-			ele.connectedEdges().style({ 'line-color': '#FAFAFA' });
-		});*/
+
+		// CONTROLE DA DIV DE OPÇOES DE MESCLAGEM
+		// ATIVA OU DESATIVA AS CORES POR SELEÇÃO
+		var buttonDivMesclagem = false;
+		$("#trigger-merge").click(function(){
+			if(buttonDivMesclagem==false){
+				buttonDivMesclagem = true;
+				limpar(false);
+				ultimoNo.css("background-color", COR_PADRAO);
+			}else{
+				buttonDivMesclagem = false;
+				limpar(true);
+			}
+			console.log(buttonDivMesclagem);
+		})
+
+		// CONTROLE DE MERGE CORES
+		var lastFor = "";
+		var firstFrom = "";
 		cy.on('click', 'node', function(evt){
-			<?php include("buscarDadosNodos.php") ?>
+			if(buttonDivMesclagem){
+				if($("#from").val()==""){
+					this.css("background-color", COR_FROM);
+					lastFor = this;
+					firstFrom = this;
+				}else if($("#for").val()!=""){
+					if(this.id()==firstFrom.id()){
+						return;
+					}else{
+						this.css("background-color", COR_FOR);
+						lastFor.css("background-color", COR_PADRAO);
+						lastFor = this;
+					}
+				}else{
+					this.css("background-color", COR_FOR);
+					lastFor = this;
+				}	
+			}
+			
+		})
+		// CORES:
+
+		// LIMPAR CORES E VALORES DO FORMULARIO DE MERGE
+		$("#limpar").click(function(){
+			limpar(true);
+		})
+
+		// LIMPA OS CAMPOS E CORES DOS NODOS
+		// PARAMETROS: $limparCores
+					// Se true atribui as cores padrões aos nodos
+					// Caso seja false limpa apenas os campos dos input's
+		// COR PADRÃO:
+		
+		function limpar(limparCores){
+			$("#from").val("");
+			$("#for").val("");
+			$("#fromUsuario").val("");
+			$("#forUsuario").val("");
+			if(limparCores==true){
+				if(lastFor!="")
+					lastFor.css("background-color", COR_PADRAO);
+				if(firstFrom!="")
+					firstFrom.css("background-color", COR_PADRAO);
+			}
+		}
+
+		//CONTROLE DE MERGE
+		var ultimoNo = "";
+		cy.on('click', 'node', function(evt){
+			// <START> seleciona o valor do predecessor caso o usuário crie um novo nodo
 			$("#predecessor").val(this.id());
+			// VERIFICAÇÃO DE COR DO NODO
 			$("#cardTitulo").text(this.data('titulo'));
+			<?php include("buscarDadosNodos.php") ?>
 			$("#cardConteudo").text(descricao);
-			console.log(descricao);
+			console.log(">>>>"+descricao);
+			if(!buttonDivMesclagem){
+				if(ultimoNo=="")
+					ultimoNo = this;
+				if(ultimoNo.id()!=this.id())
+					ultimoNo.css("background-color", COR_PADRAO);
+				this.css("background-color", COR_NOVO_NODO);
+				ultimoNo = this;
+			}
+			// <END>
 			if($("#from").val()==""){
+				// campo que é enviado pro cadastro
 				$("#from").val(this.id());
+				// campo que é apenas exibido pro usuário
+				$("#fromUsuario").val(this.data('titulo'));
 				$("#Node").prop("disabled", false);
 
 			}else{
-				if(this.id()!=$("#from").val())
+				if(this.id()!=$("#from").val()){
+					// campo que é enviado pro cadastro
 					$("#for").val(this.id());
+					// campo que é apenas exibido pro usuário
+					$("#forUsuario").val(this.data('titulo'));
+				}
+
 			}
 		})
+
 	});
 </script>
 <?php include("dao/nodesRelationships.php") ?>

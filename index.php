@@ -33,7 +33,7 @@
 		<div class="col l8" style="border: 1px solid black">
 			<form action="controllers/criarNodos.php" method="POST">
 				<div class="row">
-					<input type="text" name="predecessor" hidden readonly id="predecessor">
+					<input type="text" name="predecessor"  readonly id="predecessor">hidden
 				</div>
 				<div class="row">
 					<label>Titulo</label>
