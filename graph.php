@@ -133,11 +133,17 @@
 		cy.on('click', 'node', function(evt){
 			// <START> seleciona o valor do predecessor caso o usuário crie um novo nodo
 			$("#predecessor").val(this.id());
-			// VERIFICAÇÃO DE COR DO NODO
 			$("#cardTitulo").text(this.data('titulo'));
-			<?php include("buscarDadosNodos.php") ?>
-			$("#cardConteudo").text(descricao);
-			console.log(">>>>"+descricao);
+			$.ajax({
+				type: 'POST',
+				url: 'buscarDadosNodos.php',
+				cache: false,
+				data: { 'id': this.id() },
+				success : function(retorno){
+					$("#cardConteudo").text(retorno);
+				}
+			});
+			// VERIFICAÇÃO DE COR DO NODO
 			if(!buttonDivMesclagem){
 				if(ultimoNo=="")
 					ultimoNo = this;
