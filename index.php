@@ -21,7 +21,7 @@
 	<link href="https://fonts.googleapis.com/icon?family=Material+Icons"
 	rel="stylesheet">
 	<!-- CUSTOM -->
-	<link rel="stylesheet" href="css/customMaterialize.css">
+	<!-- <link rel="stylesheet" href="css/customMaterialize.css"> -->
 	<!-- INICIALIZAÇÃO JQUERY DOS COMPONENTES MATERIALIZE -->
 	<script src="js/initialization.js"></script>
 </head>
@@ -33,19 +33,25 @@
 		<div class="col l8" style="border: 1px solid black">
 			<form action="controllers/criarNodos.php" method="POST">
 				<div class="row">
-					<input type="text" name="predecessor"  readonly id="predecessor">hidden
+					<input type="text" name="predecessor" hidden readonly id="predecessor">
 				</div>
 				<div class="row">
-					<label>Titulo</label>
-					<input id="input" type="text" name="titulo">
+					<div class="col l12 input-field">
+						<i class="material-icons prefix">title</i>
+						<input id="titulo" type="text" name="titulo">
+						<label for="titulo">Titulo</label>
+					</div>
 				</div>
 				<div class="row">
-					<label>Descrição</label>
-					<input type="text" name="descricao">
+					<div class="col l12 input-field">
+						<i class="material-icons prefix">description</i>
+						<input id="descricao" type="text" name="descricao">
+						<label for="titulo">Titulo</label>
+					</div>
 				</div>
 				<div class="row">
 					<div class="col l3 center">
-						<input type="submit" name="submit" id="Node" value="Node">disabled
+						<button class="btn waves-effect waves-light" type="submit" name="submit" id="Node" disabled style="width: 100%;">Criar Card</button>
 					</div>
 					<div class="input-field col l6">
 						<select>
@@ -55,25 +61,25 @@
 						</select>
 					</div>
 					<div class="col l3 center">
-						<input class="node" type="button" name="btn-branch" id="branch" value="Branch">
+						<button class="btn waves-effect waves-light" type="button" id="trigger-merge" style="width: 100%;">Unir Ramificação</button>
 					</div>
 				</div>
 			</form>	
 			<div class="row">
 				<div class="container">
-					<input type="button" id="trigger-merge" value="Mesclar cards" />
+					
 					<div id="merge" style="display: none;">
 						<form action="controllers/criarNodos.php" method="POST">
 							<div class="row">
 								<div class="input-field col l6">
-									<b class="text-color yellow">De:</b>
+									<b class="text-color"  style="background-color: #B8860B;">De:</b>
 									<!-- CAMPO QUE É MOSTRADO PARA O USUÁIO -->
 									<input type="text" readonly id="fromUsuario" name="fromUsuario"/>
 									<!-- CAMPO QUE É ENVIADO NO FORMULÁRIO -->
 									<input type="text" readonly hidden id="from" name="from"/>	
 								</div>
 								<div class="input-field col l6">
-									<b class="text-color green">Para:</b>
+									<b class="text-color"  style="background-color: #DAA520;">Para:</b>
 									<!-- CAMPO QUE É MOSTRADO PARA O USUÁIO -->
 									<input type="text" readonly name="forUsuario" id="forUsuario"/>
 									<!-- CAMPO QUE É ENVIADO NO FORMULÁRIO -->

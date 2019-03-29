@@ -18,7 +18,7 @@
 					'text-opacity': 0.5,
 					'text-valign': 'center',
 					'text-halign': 'right',
-					'background-color': '#11479e',
+					'background-color': '#007399',
 					'width': 10,
 					'height': 10
 				}
@@ -27,10 +27,10 @@
 				selector: 'edge',
 				style: {
 					'curve-style': 'bezier',
-					'width': 1.5,
-					'target-arrow-shape': 'triangle',
-					'line-color': '#9dbaea',
-					'target-arrow-color': '#9dbaea',
+					'width': 0.9,
+					'target-arrow-shape': 'vee',
+					'line-color': '#696969',
+					'target-arrow-color': '#696969',
 				}
 			}
 			// {
@@ -57,22 +57,14 @@
 		cy.minZoom(0.5);
 
 		// CORES PADRAO
-		var COR_PADRAO = "blue";
-		var COR_FROM = "yellow";
-		var COR_FOR = "green";
-		var COR_NOVO_NODO = "green";
+		var COR_PADRAO = "#007399";
+		var COR_FROM = "#B8860B";
+		var COR_FOR = "#990000";
+		var COR_NOVO_NODO = "#990000";
 
 
 		// CONTROLE DA DIV DE OPÇOES DE MESCLAGEM
 		// ATIVA OU DESATIVA AS CORES POR SELEÇÃO
-		var buttonDivMesclagem = false;
-
-		// CORES PADRAO
-		var COR_PADRAO = "blue";
-		var COR_FROM = "yellow";
-		var COR_FOR = "green";
-		var COR_NOVO_NODO = "green";
-		// Variavel que fez o controle da div de mesclagem.
 		var buttonDivMesclagem = false;
 		// CONTROLE DE MERGE CORES
 		// lastFor: Ultimo nodo que foi selecionado para ser o nodo que recebe a relação
@@ -100,7 +92,6 @@
 				buttonDivMesclagem = false;
 				limpar(true);
 			}
-			console.log(buttonDivMesclagem);
 		})
 
 		
@@ -154,9 +145,10 @@
 			// <START> seleciona o valor do predecessor caso o usuário crie um novo nodo
 			$("#predecessor").val(this.id());
 			$("#cardTitulo").text(this.data('titulo'));
+
 			$.ajax({
 				type: 'POST',
-				url: 'buscarDadosNodos.php',
+				url: 'dao/buscarDadosNodos.php',
 				cache: false,
 				data: { 'id': this.id() },
 				success : function(retorno){
