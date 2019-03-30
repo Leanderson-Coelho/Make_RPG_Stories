@@ -8,16 +8,6 @@ if($acao=="Node"){
 	$idNodoAnterior = $_POST['predecessor'];
 	$titulo = $_POST['titulo'];
 	$descricao = $_POST['descricao'];
-	//VERIFICA SE O ID DO PREDECESSOR É VAZIO
-	// if($idNodoAnterior==""){
-		// echo 'if(!$idNodoAnterior=""){';
-		// $collection = (new MongoDB\Client)->makerpg->nodes;
-		// VERIFICA SE EXISTEM MAIS DE UM NÓ, CASO SIM, NÃO SE PODE CRIAR SEM UM PREDECESSOR
-		// if($collection->count()>=1){
-			// echo 'if($collection->count()>1){';
-			// return header('location:../index.php');
-		// }
-	// }
 	createNodes($titulo,$descricao,$idNodoAnterior);
 }else{
 	$idNodoAnterior = $_POST['from'];

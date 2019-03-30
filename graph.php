@@ -33,23 +33,6 @@
 					'target-arrow-color': '#696969',
 				}
 			}
-			// {
-			// 	selector:'node:selected',
-			// 	style:{
-			// 		'background-color': 'black',
-			// 		'line-color': 'black',
-			// 		'target-arrow-color': 'black',
-			// 		'source-arrow-color': 'black',
-			// 		'opacity': 1
-			// 	}
-			// },
-			// {
-			// 	selector:'.faded',
-			// 	style:{
-			// 		'opacity': 0.25,
-			// 		'text-opacity': 0
-			// 	},
-			// },
 			],
 			<?php include("dao/nodesRelationships.php") ?>	
 		});
@@ -140,7 +123,6 @@
 		}
 
 		//CONTROLE DE MERGE
-		var ultimoNo = "";
 		cy.on('click', 'node', function(evt){
 			// <START> seleciona o valor do predecessor caso o usuário crie um novo nodo
 			$("#predecessor").val(this.id());
@@ -185,4 +167,3 @@
 
 	});
 </script>
-<?php include("dao/nodesRelationships.php") ?>

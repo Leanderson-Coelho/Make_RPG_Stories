@@ -1,80 +1,112 @@
+body {
+	/*background-color: #26a69a !important;*/
+	background-image: url("../background.jpg");
+}
+
+.cardDescricao{
+	min-height: 23%;
+}
+
+#Node, #trigger-merge{
+	width: 100%;
+}
+
+
+.chat{
+	min-height: 23% !important;
+	max-height: 23%;
+}
+
+#msgChat{
+	/*margin-top: 15%;*/
+}
+
+.msgRecebidas{
+	margin-bottom: 0;
+	min-height: 16%;
+	max-height: 10%;
+	padding: 5px;
+	padding-bottom: 0;
+}
+
+.msgEnviada{
+	margin: 0;
+	padding: 0 5px 5px 5px;
+}
+
+.painelExibicao{
+	margin-right: 30px;
+}
+
+.painelCriacao{
+	/*max-height: 50%;*/
+}
+
+.grapHerade {
+	background-color: blue;
+}
+
+.graphTitle {
+	color: #26a69a;    
+}
+
+#cardTitulo {
+	color: #990000;
+}
+
+#cardConteudo {
+	color: #990000;
+	margin: 0px 5px 0px 5px !important;
+}
+
+#cardCollapsibel li{
+	border-radius: 7px;
+}
+
 p {
-    font-weight: 300;
+	font-weight: 300;
 }
 
-.listaComentario li{
-	margin-bottom: 25px;
-}
-
-.compartilhaPublicacao{
-	width: 600px;
-	height: 400px;
-	background: #000;
-	position: fixed;
-	top:0px;
-	opacity: 10%;
-	margin: 50%;
-}
-
-.perfil{
-    margin-left: 20px !important;
-    margin-right: 20px !important;
-    padding-right: 20px !important;
-}
-
-.publicacao{
-	padding-top: 10px;
-	padding-bottom: 10px;
-	padding-left: 20px;
-	padding-right: 20px;
-	border-radius: 10px;
+.cards-principais {
+	border-radius: 10px ;
 }
 
 label{
-    color: #000;
+	color: #000;
 }
 
 html{
-    font-family:-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-}
-
-.logo{    
-    height: 54px;
-}
-
-.imgGrupo{
-	width: 42px;
-	height: 42px;
-}
-
-.separador{
-    margin-bottom: 0;
+	font-family:-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 }
 
 @media only screen and (min-width: 993px) {
-    .container {
-      width: 90%;
-    }
+	.container {
+		width: 90%;
+	}
 }
 
-/* TAMANHO DAS LOGOS */
-.imgConteudo{
-    width: 190px;
-    height: 75px;
+
+/* USA QUANDO A TELA FOR DE CELULAR*/
+@media only screen and (max-width: 993px) {
+	.container {
+		width: 90%;
+	}
+
+	.painelExibicao{
+		margin-right: 0;
+	}
+
 }
-/* POSICAO LOGOS CONTEUDO */
-.imgConteudo{
-    margin-top: 100%;
-}
+
 
 /* MUDANDO COR PADRAO MENU */
 nav{
-    background-color: #f57c00 ;
+	background-color: #f57c00 ;
 }
 
 /* MUDANDO COR PADRAO DO RODAPE */
 .page-footer{
-    background-color: #f57c00 ;
+	background-color: #f57c00 ;
 }
 
 /* Alteração nos input no evento CLick */
@@ -91,24 +123,25 @@ input[type=tel]:not(.browser-default):focus:not([readonly]),
 input[type=number]:not(.browser-default):focus:not([readonly]),
 input[type=search]:not(.browser-default):focus:not([readonly]),
 textarea.materialize-textarea:focus:not([readonly]) {
-    border-bottom: 1px solid #125205;
-    -webkit-box-shadow: 0 1px 0 0 #125205;
-            box-shadow: 0 1px 0 0 #125205;
+	border-bottom: 1px solid #125205;
+	-webkit-box-shadow: 0 1px 0 0 #125205;
+	box-shadow: 0 1px 0 0 #125205;
 }
 
 /* ALTERANDO COR PADRAO DOS BOTOES */
 .btn, .btn-large, .btn-small {
-    background-color: #125205;
+	background-color: #26a69a;
 }
 
-/* ALTERANDO COR PADRAO DOS BOTOES */
+
+/* ALTERANDO COR PADRAO DOS BOTOES HOVER */
 .btn:hover, .btn-large:hover, .btn-small:hover {
-    background-color: #f57c00 ;
+	background-color: #990000 ;
 }
 
 /* LETRAS DO INPUT */
 .input-field > label {
-    color: #000;
+	color: #000;
 }
 
 /* LETRAS DO INPUT */
@@ -125,46 +158,28 @@ input[type=tel]:not(.browser-default):focus:not([readonly]) + label,
 input[type=number]:not(.browser-default):focus:not([readonly]) + label,
 input[type=search]:not(.browser-default):focus:not([readonly]) + label,
 textarea.materialize-textarea:focus:not([readonly]) + label {
-  color: #125205;
+	color: #125205;
 }
 
 /* COR DO RADIO FORM */
 [type="radio"]:checked + span:after,
 [type="radio"].with-gap:checked + span:before,
 [type="radio"].with-gap:checked + span:after {
-  border: 2px solid #125205;
+	border: 2px solid #125205;
 }
 
 [type="radio"]:checked + span:after,
 [type="radio"].with-gap:checked + span:after {
-  background-color: #125205;
-}
-/* DEIXAR CAMPO VERMELHO QUANDO É PRA REMOVER USUÁRIO DO GRUPO */
-.emailRemover[type=email]:not(.browser-default):focus:not([readonly]) + label{
-	color: red;
+	background-color: #125205;
 }
 
-/* DEIXAR CAMPO VERMELHO QUANDO É PRA REMOVER USUÁRIO DO GRUPO */
-.input-field .iconRed.active {
-  color: red;
-}
-
-.conteudo{
-	height: -webkit-fill-available;
-}
-
-/* CSS DOS GRUPOS QUE PARTICIPO --- INICIO */
-.collection .collection-item {
-    background-color: transparent;
-    border: none;
-}
 
 .collection .collection-item {
-    color: #000;
+	color: #000;
 }
 
 .collection {
-    border: none;
+	border: none;
 }
 
 
