@@ -81,6 +81,7 @@
 
 
 
+
 		// CONTROLE DA DIV DE OPÇOES DE MESCLAGEM
 		// ATIVA OU DESATIVA AS CORES POR SELEÇÃO
 		$("#trigger-merge").click(function(){
@@ -127,6 +128,7 @@
 					// Se true atribui as cores padrões aos nodos
 					// Caso seja false limpa apenas os campos dos input's
 		function limpar(limparCores){
+
 			$("#from").val("");
 			$("#for").val("");
 			$("#fromUsuario").val("");
@@ -138,7 +140,11 @@
 					firstFrom.css("background-color", COR_PADRAO);
 			}
 		}
-
+		$("#Node").ready(function(){
+			if(<?php include("dao/contarNodos.php");?>==0){
+				$("#Node").prop("disabled", false);
+			}
+		});
 		//CONTROLE DE MERGE
 		var ultimoNo = "";
 		cy.on('click', 'node', function(evt){

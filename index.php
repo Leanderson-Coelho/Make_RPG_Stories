@@ -51,7 +51,7 @@
 				</div>
 				<div class="row">
 					<div class="col l3 center">
-						<button class="btn waves-effect waves-light" type="submit" name="submit" id="Node" disabled style="width: 100%;">Criar Card</button>
+						<button class="btn waves-effect waves-light" type="submit" name="submit" id="Node" disabled style="width: 100%;" value="Node">Criar Card</button>
 					</div>
 					<div class="input-field col l6">
 						<select>
@@ -61,7 +61,7 @@
 						</select>
 					</div>
 					<div class="col l3 center">
-						<button class="btn waves-effect waves-light" type="button" id="trigger-merge" style="width: 100%;">Unir Ramificação</button>
+						<button class="btn waves-effect waves-light" type="button" id="trigger-merge" style="width: 100%;" value="Branch">Unir Ramificação</button>
 					</div>
 				</div>
 			</form>	
