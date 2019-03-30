@@ -69,6 +69,8 @@
 		// ATIVA OU DESATIVA AS CORES POR SELEÇÃO
 		$("#trigger-merge").click(function(){
 			if(buttonDivMesclagem==false){
+				$("#Node").prop("disabled", true);
+				$("#mesclar").prop("disabled", true);
 				buttonDivMesclagem = true;
 				limpar(false);
 				ultimoNo.css("background-color", COR_PADRAO);
@@ -78,6 +80,13 @@
 			}
 		})
 
+		$("#Node").ready(function(){
+			if(<?php include("dao/contarNodos.php");?>==0){
+				$("#Node").prop("disabled", false);
+			}else{
+				$("#trigger-merge").prop("disabled", false);
+			}
+		});
 		
 		cy.on('click', 'node', function(evt){
 			if(buttonDivMesclagem){
@@ -88,12 +97,18 @@
 				}else if($("#for").val()!=""){
 					if(this.id()==firstFrom.id()){
 						return;
-					}else{
+					}else if(this.id()==lastFor.id()){
+						return;
+					}
+					else{
 						this.css("background-color", COR_FOR);
 						lastFor.css("background-color", COR_PADRAO);
 						lastFor = this;
 					}
+				}else if (this.id()==firstFrom.id()){
+					return;
 				}else{
+					$("#mesclar").prop("disabled", false);
 					this.css("background-color", COR_FOR);
 					lastFor = this;
 				}	
@@ -111,7 +126,7 @@
 					// Se true atribui as cores padrões aos nodos
 					// Caso seja false limpa apenas os campos dos input's
 		function limpar(limparCores){
-
+			$("#mesclar").prop("disabled", true);
 			$("#from").val("");
 			$("#for").val("");
 			$("#fromUsuario").val("");
@@ -123,12 +138,8 @@
 					firstFrom.css("background-color", COR_PADRAO);
 			}
 		}
-		$("#Node").ready(function(){
-			if(<?php include("dao/contarNodos.php");?>==0){
-				$("#Node").prop("disabled", false);
-			}
-		});
 		//CONTROLE DE MERGE
+		var ultimoNo = "";
 		cy.on('click', 'node', function(evt){
 			// <START> seleciona o valor do predecessor caso o usuário crie um novo nodo
 			$("#predecessor").val(this.id());
@@ -145,6 +156,7 @@
 			});
 			// VERIFICAÇÃO DE COR DO NODO
 			if(!buttonDivMesclagem){
+				$("#Node").prop("disabled", false);/////////////////////////
 				if(ultimoNo=="")
 					ultimoNo = this;
 				if(ultimoNo.id()!=this.id())
@@ -158,7 +170,6 @@
 				$("#from").val(this.id());
 				// campo que é apenas exibido pro usuário
 				$("#fromUsuario").val(this.data('titulo'));
-				$("#Node").prop("disabled", false);
 
 			}else{
 				if(this.id()!=$("#from").val()){
@@ -173,3 +184,4 @@
 
 	});
 </script>
+<?php include("dao/nodesRelationships.php") ?>

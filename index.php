@@ -62,7 +62,7 @@
 						</select>
 					</div>
 					<div class="col l3 center">
-						<button class="btn waves-effect waves-light" type="button" id="trigger-merge" style="width: 100%;" value="Branch">Unir Ramificação</button>
+						<button class="btn waves-effect waves-light" type="button" id="trigger-merge" style="width: 100%;" value="Branch" disabled>Unir Ramificação</button>
 					</div>
 				</div>
 			</form>	
@@ -89,7 +89,7 @@
 							</div>
 							<div class="input-field">
 								<input type="button" id="limpar" value="Limpar"/>
-								<input type="submit" name="submit" value="Mesclar"/>
+								<input type="submit" name="submit" value="Mesclar" id="mesclar" disabled />
 							</div>
 						</form>
 					</div>	
