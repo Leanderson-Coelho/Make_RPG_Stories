@@ -1,0 +1,38 @@
+.divLogin{
+	margin-top: 10%;
+	margin-left: 30% !important;
+}
+
+.cardLogin{
+	padding-top: 5%;
+	padding-bottom: 10%;
+	padding-left: 3%;
+	padding-right: 3%;
+	border-radius: 10px;
+	background-color: rgba(255, 255, 255, 0.8);
+}
+
+.inputLogin{
+	width: 65%;
+	margin-left: 20%;
+}
+
+#frase {
+	margin-left: 20%; 
+}
+
+#iconeLogin {
+	margin-left: 40%; 
+	color: #2bbbad;
+}
+
+/*COR DO PLACEHOLDER*/
+::-webkit-input-placeholder{
+	color: #000;
+}
+
+#criarConta{
+	font-size: 14pt;
+	color: #311b92;
+	margin-left: 40%;
+}
