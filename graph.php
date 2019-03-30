@@ -39,6 +39,7 @@
 		cy.maxZoom(2);
 		cy.minZoom(0.5);
 
+
 		// CORES PADRAO
 		var COR_PADRAO = "#007399";
 		var COR_FROM = "#B8860B";

@@ -1,6 +1,20 @@
+/* -------------------------------------------------------------- */
+/*	ARQUIVO DE COSTOMIZAÇÃO CSS */
+/*	LINHA 126 - COLLAPSIBLE FLUTUANTE */
+/*	caso seja comentado o collapsible empurra tudo abaixo	*/
+/* -------------------------------------------------------------- */
+
+
 body {
 	/*background-color: #26a69a !important;*/
 	background-image: url("../background.jpg");
+	overflow: hidden;
+}
+
+.menu {
+	min-height: 100% !important;
+	min-width: 5%;
+	max-width: 5%;
 }
 
 .cardDescricao{
@@ -79,25 +93,19 @@ html{
 	font-family:-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 }
 
-@media only screen and (min-width: 993px) {
-	.container {
-		width: 90%;
-	}
+
+/*------------------CONFIGURAÇÃO ALTERNATIVA PARA O CARD QUE EXIBE A DESCRIÇÃO*/
+.cardCollapsible {
+	padding: 5px !important;
 }
 
-
-/* USA QUANDO A TELA FOR DE CELULAR*/
-@media only screen and (max-width: 993px) {
-	.container {
-		width: 90%;
-	}
-
-	.painelExibicao{
-		margin-right: 0;
-	}
-
+.ulCollapsible {
+	width: 99%;
+	position: absolute;
 }
 
+/*------------------------FIM DA ALTERNATIVA DE EXIBIÇAO DE CARD DESCRIÇÃO--------*/
+/*-  - - - - - - - - - - PARA DESATIVA BASTA COMENTAR -- -  - -- - - -  -  - - - -*/
 
 /* MUDANDO COR PADRAO MENU */
 nav{
@@ -184,5 +192,47 @@ textarea.materialize-textarea:focus:not([readonly]) + label {
 
 
 
+@media only screen and (min-width: 993px) {
+	.container {
+		width: 90%;
+	}
+}
 
+
+/* USA QUANDO A TELA FOR DE CELULAR*/
+@media only screen and (max-width: 993px) {
+	.container {
+		width: 90%;
+	}
+
+	.painelExibicao{
+		margin-left: 10% !important;
+	}
+
+	.painelCriacao{
+		margin: 10%;
+	}
+
+	.divNode, .divBranch{
+		width: 100%;
+	}
+
+	.chat {
+		margin: 10%;
+		width: 80%;
+	}
+
+
+
+	.msgEnviadaCol{
+		width: 90%;
+		margin-top: -5;
+	}
+
+	.ulCollapsible {
+		width: 97% !important;
+		position: absolute;
+	}
+
+}
 
