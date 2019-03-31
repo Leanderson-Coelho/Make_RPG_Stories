@@ -1,28 +1,28 @@
 <?php 
 require_once __DIR__ ."/../vendor/autoload.php";
 
-$email = $_POST['email'];
-$senha = $_POST['senha'];
+$login = $_POST['cLogin'];
+$senha = $_POST['cSenha'];
 $nome = $_POST['nomeUsuario'];
 
-validar($email,$senha,$nome);
+validar($login,$senha,$nome);
 
 
-function cadastrar($email,$senha,$nome){
-	$collection = (new MongoDB\Client)->makerpg->usuarios;
+function cadastrar($login,$senha,$nome){
+	$collection = (new MongoDB\Client)->makerpg->usuario;
 	$document = [
-		'email' => $email,
+		'login' => $login,
 		'senha' => $senha,
-		'nome' => $nome
+		'nomeUsuario' => $nome
 	];
 	$collection->insertOne($document);
 }
 
-function validar($email,$senha,$nome){
-	if(!isset($email) || !isset($senha) || !isset($nome)){
+function validar($login,$senha,$nome){
+	if(!isset($login) || !isset($senha) || !isset($nome)){
 		return header('location:../login.php');
 	}else{
-		cadastrar($email,$senha,$nome);
+		cadastrar($login,$senha,$nome);
 	}
 }
 

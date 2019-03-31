@@ -39,7 +39,7 @@
 					</div>
 				</form>
 			</div>
-			<div class="red center"><h5><?php echo $_GET['msgErro']; ?></h5></div>
+			<div class="red-text center"><h5><?php echo $_GET['msgErro']; ?></h5></div>
 			<div class="row">
 				<div class="">
 					<b><a id="criarConta" href="#CADASTRO" class="waves-effect waves-light modal-trigger">Criar uma conta</a></b>
@@ -59,13 +59,13 @@
 							<div class="col l3"><label for="cEmail" class="labelCadastro">Email:</label></div>
 							<div class="col l9">
 								<div class="input-field input-field-cadastro">
-									<input id="cEmail" class="inputsCadastro" type="email" name="email" required>
+									<input id="cEmail" class="inputsCadastro" type="email" name="cLogin" required>
 								</div>
 							</div>
 							<div class="col l3"><label for="cSenha" class="labelCadastro">Senha:</label></div>
 							<div class="col l9">
 								<div class="input-field input-field-cadastro">
-									<input id="cSenha" class="inputsCadastro" type="password" name="senha" minlength="8" required>
+									<input id="cSenha" class="inputsCadastro" type="password" name="cSenha" minlength="8" required>
 								</div>
 							</div>
 							<div class="col l3"><label for="cConfirmarSenha" class="labelCadastro">Confirmar Senha:</label></div>
