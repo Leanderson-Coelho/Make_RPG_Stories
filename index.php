@@ -28,7 +28,7 @@
 	<!-- INICIALIZAÇÃO JQUERY DOS COMPONENTES MATERIALIZE -->
 	<script src="js/initialization.js"></script>
 </head>
-<body>
+<body onload="visualizarMsgs()">
 	<div class="row myBody">
 		<div class="fixed-action-btn">
 			<a class="btn-floating btn-large red">
@@ -127,13 +127,17 @@
 		</div>
 		<div class="row" >
 			<div class="col l6 push-l1 cards-principais z-depth-5 card chat" style="background-color: #fff">
-				<div class="row msgRecebidas">
+				<div class="row msgRecebidas" id="msgRecebidas">
 
 				</div>
 				<div class="row msgEnviada">
 					<div class="input-field msgEnviadaCol">
-						<i class="material-icons right prefix">send</i>
-						<input  id="msgChat" type="text" name="mensagem" />
+						<form id="form">
+							<i class="material-icons right prefix">send</i>
+							<input  id="msgChat" type="text" name="mensagem" />
+							<input type="text" id="usuario" hidden value=<?php echo $_SESSION['login'] ?> /><!--trocar login por nomeUsuario-->
+							<input type="submit" name="submit" hidden value="enviar"/>
+						</form>
 					</div>
 				</div>
 			</div>
@@ -141,7 +145,7 @@
 		<!-- MODALS -->
 		<div id="PERFIL" class="modal bottom-sheet">
 			<div class="modal-content">
-				<h4><?php echo $_SESSION['nome']; ?></h4>
+				<h4><?php echo $_SESSION['nomeUsuario']; ?></h4>
 				<p>A bunch of text</p>
 			</div>
 			<div class="modal-footer">
@@ -157,6 +161,8 @@
 	?>
 	<!-- CONTROLE DE INTERFACE -->
 	<script src="js/controleInterface.js"></script>
+	<script src="https://www.gstatic.com/firebasejs/5.9.2/firebase.js"></script>
+	<script src="js/chat.js"></script>
 </body>
 </html>
 <div id="SAIR" class="modal">
