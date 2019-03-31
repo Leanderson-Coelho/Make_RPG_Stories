@@ -22,7 +22,7 @@
 }
 
 #iconeLogin {
-	margin-left: 40%; 
+	margin-left: 45%; 
 	color: #2bbbad;
 }
 
@@ -35,4 +35,42 @@
 	font-size: 14pt;
 	color: #311b92;
 	margin-left: 40%;
+}
+
+/* <START> INPUT DE CADASTRO*/
+.inputsCadastro{
+	background-color: transparent !important;
+     border: 1px solid !important; 
+    /* border-bottom: 1px solid #9e9e9e; */
+    border-radius: 0 !important;
+    outline: none !important;
+    /*height: 3rem;*/
+    width: 100% !important;
+    font-size: 16px !important;
+    /*margin: 0 0 8px 0;*/
+    padding: 0 !important;
+}
+
+.input-field-cadastro{
+	margin: 0px !important;
+	padding: 0px !important;
+	font-size: 20pt !important;
+}
+
+.inputsCadastro:focus{
+	-webkit-transition: background 1s, border-radius 1s;
+    transition: background 1s, border-radius 1s;
+	border: 1px solid !important;
+	border-radius: 5px !important;
+	background-color: rgba(43,187,173,.1) !important;
+}
+
+.labelCadastro{
+	font-size: 14pt;
+}
+
+/* <END>*/
+
+span{
+	display: none;
 }

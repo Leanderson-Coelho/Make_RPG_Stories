@@ -1,9 +1,8 @@
 /* -------------------------------------------------------------- */
 /*	ARQUIVO DE COSTOMIZAÇÃO CSS */
-/*	LINHA 126 - COLLAPSIBLE FLUTUANTE */
+/*	LINHA 79 - COLLAPSIBLE FLUTUANTE */
 /*	caso seja comentado o collapsible empurra tudo abaixo	*/
 /* -------------------------------------------------------------- */
-
 
 .menu {
 	min-height: 100% !important;
@@ -77,14 +76,14 @@
 }
 
 /*------------------CONFIGURAÇÃO ALTERNATIVA PARA O CARD QUE EXIBE A DESCRIÇÃO*/
-.cardCollapsible {
+/*.cardCollapsible {
 	padding: 5px !important;
 }
 
 .ulCollapsible {
 	width: 99%;
 	position: absolute;
-}
+}*/
 
 /*------------------------FIM DA ALTERNATIVA DE EXIBIÇAO DE CARD DESCRIÇÃO--------*/
 /*-  - - - - - - - - - - PARA DESATIVA BASTA COMENTAR -- -  - -- - - -  -  - - - -*/

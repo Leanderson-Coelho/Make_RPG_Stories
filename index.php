@@ -38,7 +38,7 @@
 				<li><a class="btn-floating blue modal-trigger" data-target="PERFIL"><i class="material-icons">perm_identity</i></a></li>
 				<li><a class="btn-floating yellow darken-1"><i class="material-icons">format_quote</i></a></li>
 				<li><a class="btn-floating green"><i class="material-icons">publish</i></a></li>
-				<li><a class="btn-floating modal-trigger red" href="#modal1"><i class="material-icons">close</i></a></li>
+				<li><a href="#SAIR" class="btn-floating red modal-trigger"><i class="material-icons">close</i></a></li>
 			</ul>
 		</div>
 		<div class="col s10 l4 push-l1 card z-depth-5 painelExibicao cards-principais">
@@ -165,7 +165,7 @@
 	<script src="js/chat.js"></script>
 </body>
 </html>
-<div id="modal1" class="modal">
+<div id="SAIR" class="modal">
 	<div class="modal-content">
 		<h4>Deseja sair do Make RPG</h4>
 	</div>
