@@ -28,7 +28,7 @@
 	<!-- INICIALIZAÇÃO JQUERY DOS COMPONENTES MATERIALIZE -->
 	<script src="js/initialization.js"></script>
 </head>
-<body onload="visualizarMsgs()">
+<body >
 	<div class="row myBody">
 		<div class="fixed-action-btn">
 			<a class="btn-floating btn-large red">
@@ -135,7 +135,7 @@
 						<form id="form">
 							<i class="material-icons right prefix">send</i>
 							<input  id="msgChat" type="text" name="mensagem" />
-							<input type="text" id="usuario" hidden value=<?php echo $_SESSION['login'] ?> /><!--trocar login por nomeUsuario-->
+							<input type="text" id="usuario" hidden value=<?php echo $_SESSION['nomeUsuario'] ?> />
 							<input type="submit" name="submit" hidden value="enviar"/>
 						</form>
 					</div>
@@ -162,6 +162,8 @@
 	<!-- CONTROLE DE INTERFACE -->
 	<script src="js/controleInterface.js"></script>
 	<script src="https://www.gstatic.com/firebasejs/5.9.2/firebase.js"></script>
+	<!-- <script src="https://www.gstatic.com/firebasejs/4.8.1/firebase-messaging.js"></script> -->
+	
 	<script src="js/chat.js"></script>
 </body>
 </html>

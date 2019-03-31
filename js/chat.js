@@ -29,14 +29,10 @@ function criarMsg(msgText, usuario){
 	};
 	let db = firebase.database().ref('mensagens/'+counter);
 	db.set(msg);
-	document.getElementById('msgRecebidas').innerHTML = "";
-	visualizarMsgs();
+	// document.getElementById('msgRecebidas').innerHTML = "";
 }
 
-function visualizarMsgs(){
-	var db = firebase.database().ref('mensagens/');
-	db.on('child_added', function(dado){
-		var msgs = dado.val();
-		document.getElementById('msgRecebidas').innerHTML += `<p><b>${msgs.usuario}</b> : ${msgs.msg}</p>`;
-	})
-}
+firebase.database().ref().child('mensagens/').on('child_added', function(dado){
+	var msgs = dado.val();
+	document.getElementById('msgRecebidas').innerHTML += `<p><b>${msgs.usuario}</b> : ${msgs.msg}</p>`;
+})
