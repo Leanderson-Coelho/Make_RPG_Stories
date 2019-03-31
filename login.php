@@ -18,7 +18,6 @@
 	<!-- INICIALIZAÇÃO JQUERY DOS COMPONENTES MATERIALIZE -->
 	<!-- LOGIN JS-->
 	<script src="js/initialization.js"></script>
-	<script src="js/login.js"></script>
 </head>
 <body>
 	<div class="row">
@@ -26,7 +25,7 @@
 			<div class="card cardLogin z-depth-5">
 				<a><i id="iconeLogin" class="material-icons large">face</i></a>
 				<h4 id="frase">Entre e crie seu próprio mundo.</h4>
-				<form>
+				<form method="POST" action="controllers/controleSessao.php">
 					<div class="input-field inputLogin">
 						<i class="material-icons prefix">perm_identity</i>
 						<input type="email" name="login" id="login" placeholder="Email" />
@@ -40,6 +39,7 @@
 					</div>
 				</form>
 			</div>
+			<div class="red center"><h5><?php echo $_GET['msgErro']; ?></h5></div>
 			<div class="row">
 				<div class="">
 					<b><a id="criarConta" href="#CADASTRO" class="waves-effect waves-light modal-trigger">Criar uma conta</a></b>

@@ -1,3 +1,4 @@
+<?php include("controllers/trava.php");?>
 <!DOCTYPE>
 <html>
 <head>
@@ -75,7 +76,7 @@
 						</select>
 					</div>
 					<div class="col l3 center divBranch">
-						<button class="btn waves-effect waves-light" type="button" id="trigger-merge" style="width: 100%;" value="Branch">Unir Ramificação</button>
+						<button class="btn waves-effect waves-light" type="button" id="trigger-merge" style="width: 100%;" value="Branch" disabled>Unir Ramificação</button>
 					</div>
 				</div>
 			</form>	
@@ -103,7 +104,7 @@
 								<!-- <input class="btn waves-effect waves-light" type="button" id="limpar" value="Limpar"/> -->
 								<button class="btn waves-effect waves-light" type="button" id="limpar">Limpar</button>
 								<!-- <input class="btn waves-effect waves-light" type="submit" name="submit" value="Mesclar"/> -->
-								<button class="btn waves-effect waves-light" type="submit" name="submit">Mesclar</button>
+								<button class="btn waves-effect waves-light" type="submit" name="submit" id="mesclar" disabled>Mesclar</button>
 							</div>
 						</form>
 					</div>	
@@ -158,3 +159,12 @@
 	<script src="js/controleInterface.js"></script>
 </body>
 </html>
+<div id="modal1" class="modal">
+	<div class="modal-content">
+		<h4>Deseja sair do Make RPG</h4>
+	</div>
+	<div class="modal-footer">
+		<a href="controllers/logout.php" class="modal-close waves-effect waves-green btn-flat">Sim</a>
+		<a href="#" class="modal-close waves-effect waves-green btn-flat">Não</a>
+	</div>
+</div>
