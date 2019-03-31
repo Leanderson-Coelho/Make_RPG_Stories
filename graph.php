@@ -38,7 +38,9 @@
 		});
 		cy.maxZoom(2);
 		cy.minZoom(0.5);
-
+		cy.viewport({
+			zoom: 2
+		});
 
 		// CORES PADRAO
 		var COR_PADRAO = "#007399";
@@ -56,7 +58,7 @@
 		// firstFor: Primeiro nodo selecionado para ser o nodo de onde sai a relação
 			// A variavel serve para controle de seleção, caso o usuário tente 
 			// selecionar o primeiro nodo novamente. 
-		var firstFrom = "";
+			var firstFrom = "";
 		// CONTROLE DE MERGE
 		// A variavel serve para fazer o controle de seleção, caso o usuário tente selecionar
 		// outro nodo para ser o correspondido de uma nova relação, o nodo selecionado anteriormente
@@ -126,19 +128,19 @@
 		// PARAMETROS: $limparCores
 					// Se true atribui as cores padrões aos nodos
 					// Caso seja false limpa apenas os campos dos input's
-		function limpar(limparCores){
-			$("#mesclar").prop("disabled", true);
-			$("#from").val("");
-			$("#for").val("");
-			$("#fromUsuario").val("");
-			$("#forUsuario").val("");
-			if(limparCores==true){
-				if(lastFor!="")
-					lastFor.css("background-color", COR_PADRAO);
-				if(firstFrom!="")
-					firstFrom.css("background-color", COR_PADRAO);
-			}
-		}
+					function limpar(limparCores){
+						$("#mesclar").prop("disabled", true);
+						$("#from").val("");
+						$("#for").val("");
+						$("#fromUsuario").val("");
+						$("#forUsuario").val("");
+						if(limparCores==true){
+							if(lastFor!="")
+								lastFor.css("background-color", COR_PADRAO);
+							if(firstFrom!="")
+								firstFrom.css("background-color", COR_PADRAO);
+						}
+					}
 		//CONTROLE DE MERGE
 		var ultimoNo = "";
 		cy.on('click', 'node', function(evt){
@@ -185,4 +187,3 @@
 
 	});
 </script>
-<?php include("dao/nodesRelationships.php") ?>
