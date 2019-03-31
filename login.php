@@ -40,6 +40,7 @@
 				</form>
 			</div>
 			<div class="red-text center"><h5><?php echo $_GET['msgErro']; ?></h5></div>
+			<div class="green-text center"><h5><?php echo $_GET['msg']; ?></h5></div>
 			<div class="row">
 				<div class="">
 					<b><a id="criarConta" href="#CADASTRO" class="waves-effect waves-light modal-trigger">Criar uma conta</a></b>
@@ -59,25 +60,25 @@
 							<div class="col l3"><label for="cEmail" class="labelCadastro">Email:</label></div>
 							<div class="col l9">
 								<div class="input-field input-field-cadastro">
-									<input id="cEmail" class="inputsCadastro" type="email" name="cLogin" required>
+									<input id="cEmail" class="inputsCadastro" type="email" name="cLogin" >
 								</div>
 							</div>
 							<div class="col l3"><label for="cSenha" class="labelCadastro">Senha:</label></div>
 							<div class="col l9">
 								<div class="input-field input-field-cadastro">
-									<input id="cSenha" class="inputsCadastro" type="password" name="cSenha" minlength="8" required>
+									<input id="cSenha" class="inputsCadastro" type="password" name="cSenha" minlength="8" >
 								</div>
 							</div>
 							<div class="col l3"><label for="cConfirmarSenha" class="labelCadastro">Confirmar Senha:</label></div>
 							<div class="col l9">
 								<div class="input-field input-field-cadastro">
-									<input id="cConfirmarSenha" class="inputsCadastro" type="password" minlength="8" name="confirmarSenha" required><span>Digite a senha novamente para efetuar o cadastro.</span>
+									<input id="cConfirmarSenha" class="inputsCadastro" type="password" minlength="8" name="confirmarSenha" ><span>Digite a senha novamente para efetuar o cadastro.</span>
 								</div>
 							</div>
 							<div class="col l3"><label for="cNomeUsuario" class="labelCadastro">Nome de usuário:</label></div>
 							<div class="col l9">
 								<div class="input-field input-field-cadastro">
-									<input id="cNomeUsuario" class="inputsCadastro" type="text" name="nomeUsuario" minlength="8" required>
+									<input id="cNomeUsuario" class="inputsCadastro" type="text" name="nomeUsuario" minlength="8" >
 								</div>
 							</div>
 							<div class="input-field">
