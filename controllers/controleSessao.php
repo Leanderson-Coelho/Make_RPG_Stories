@@ -8,6 +8,7 @@ $cursor = $collection->findOne(['login'=>$login]);
 if($cursor['senha']==$senha){
 	$_SESSION['login'] = $cursor['login'];
 	$_SESSION['senha'] = $cursor['senha'];
+	// $_SESSION['nomeUsuario'] = $cursor['nomeUsuario'];
 	header('location:http://localhost:8080/index.php');
 
 }else{
