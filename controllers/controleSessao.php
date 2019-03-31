@@ -10,7 +10,6 @@ if($cursor['senha']==$senha){
 	$_SESSION['senha'] = $cursor['senha'];
 	$_SESSION['nomeUsuario'] = $cursor['nomeUsuario'];
 	header('location:http://localhost:8080/index.php');
-
 }else{
 	header('location:http://localhost:8080/login.php?msgErro=Login inválido');
 }
