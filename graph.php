@@ -18,6 +18,8 @@
 					'text-opacity': 0.5,
 					'text-valign': 'center',
 					'text-halign': 'right',
+					'color': 'black',
+					'font-size':8,
 					'background-color': '#007399',
 					'width': 10,
 					'height': 10
@@ -41,6 +43,7 @@
 		cy.viewport({
 			zoom: 2
 		});
+		cy.center();
 
 		// CORES PADRAO
 		var COR_PADRAO = "#007399";

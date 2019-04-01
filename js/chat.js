@@ -34,5 +34,14 @@ function criarMsg(msgText, usuario){
 
 firebase.database().ref().child('mensagens/').on('child_added', function(dado){
 	var msgs = dado.val();
-	document.getElementById('msgRecebidas').innerHTML += `<p><b>${msgs.usuario}</b> : ${msgs.msg}</p>`;
+	if(true){
+		document.getElementById('msgRecebidas').innerHTML += `<div class="col s12"><h6><b>${msgs.usuario}</b> : ${msgs.msg}</h6></div>`;
+	}else{
+		document.getElementById('msgRecebidas').innerHTML += `<div class="col s12"><h6 class="right-align"><b>${msgs.usuario}</b> : ${msgs.msg}</h6></div>`;
+	}
+	
+
+
+
+	$('#msgRecebidas').scrollTop($('#msgRecebidas')[0].scrollHeight);
 })

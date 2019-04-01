@@ -29,112 +29,124 @@
 	<script src="js/initialization.js"></script>
 </head>
 <body >
-	<div class="row myBody">
-		<div class="fixed-action-btn">
-			<a class="btn-floating btn-large red">
-				<i class="large material-icons">menu</i>
-			</a>
-			<ul>
-				<li><a class="btn-floating blue modal-trigger" data-target="PERFIL"><i class="material-icons">perm_identity</i></a></li>
-				<li><a class="btn-floating yellow darken-1"><i class="material-icons">format_quote</i></a></li>
-				<li><a class="btn-floating green"><i class="material-icons">publish</i></a></li>
-				<li><a href="#SAIR" class="btn-floating red modal-trigger"><i class="material-icons">close</i></a></li>
-			</ul>
-		</div>
-		<div class="col s10 l4 push-l1 card z-depth-5 painelExibicao cards-principais">
-			<div class="row grapHeader"><h3 class="container graphTitle">Cria e conecte seus cards !</h3></hr></div>
-			<div id="cy"></div>
-		</div>
-		<div class="col l6 push-l1 card z-depth-5 painelCriacao cards-principais">
-			<form action="controllers/criarNodos.php" method="POST">
-				<div class="row">
-					<input type="text" name="predecessor" hidden readonly id="predecessor">
-				</div>
-				<div class="row">
-					<div class="col s12 m12 l12 input-field">
-						<i class="material-icons prefix">title</i>
-						<input id="titulo" required type="text" name="titulo">
-						<label for="titulo">Titulo</label>
-					</div>
-				</div>
-				<div class="row">
-					<div class="col s12 m12 l12 input-field">
-						<i class="material-icons prefix">description</i>
-						<input id="descricao" maxlength="650" required type="text" name="descricao">
-						<label for="descricao">Descrição</label>
-					</div>
-				</div>
-				<div class="row">
-					<div class="col l3 center divNode">
-						<button class="btn waves-effect waves-light" type="submit" name="submit" id="Node" disabled value="Node">Criar Card</button>
-					</div>
-					<div class="input-field container col s12 l6">
-						<select>
-							<option value="1">Option 1</option>
-							<option value="2">Option 2</option>
-							<option value="3">Option 3</option>
-						</select>
-					</div>
-					<div class="col l3 center divBranch">
-						<button class="btn waves-effect waves-light" type="button" id="trigger-merge" style="width: 100%;" value="Branch" disabled>Unir Ramificação</button>
-					</div>
-				</div>
-			</form>	
-			<div class="row">
-				<div class="container">
-					<div id="merge" style="display: none;">
-						<form action="controllers/criarNodos.php" method="POST">
-							<div class="row">
-								<div class="input-field col s12 m12 l6">
-									<b class="text-color"  style="background-color: #B8860B;">De:</b>
-									<!-- CAMPO QUE É MOSTRADO PARA O USUÁIO -->
-									<input type="text" readonly id="fromUsuario" name="fromUsuario"/>
-									<!-- CAMPO QUE É ENVIADO NO FORMULÁRIO -->
-									<input type="text" readonly hidden id="from" name="from"/>	
-								</div>
-								<div class="input-field col s12 m12 l6">
-									<b class="text-color"  style="background-color: #DAA520;">Para:</b>
-									<!-- CAMPO QUE É MOSTRADO PARA O USUÁIO -->
-									<input type="text" readonly name="forUsuario" id="forUsuario"/>
-									<!-- CAMPO QUE É ENVIADO NO FORMULÁRIO -->
-									<input type="text" readonly hidden name="for" id="for"/>
-								</div>
-							</div>
-							<div class="input-field">
-								<!-- <input class="btn waves-effect waves-light" type="button" id="limpar" value="Limpar"/> -->
-								<button class="btn waves-effect waves-light" type="button" id="limpar">Limpar</button>
-								<!-- <input class="btn waves-effect waves-light" type="submit" name="submit" value="Mesclar"/> -->
-								<button class="btn waves-effect waves-light" type="submit" name="submit" id="mesclar" disabled>Mesclar</button>
-							</div>
-						</form>
-					</div>	
-				</div>
+	<div class="container">
+		<div class="row">
+			<div class="fixed-action-btn">
+				<a class="btn-floating btn-large red">
+					<i class="large material-icons">menu</i>
+				</a>
+				<ul>
+					<li><a class="btn-floating blue modal-trigger" data-target="PERFIL"><i class="material-icons">perm_identity</i></a></li>
+					<li><a class="btn-floating yellow darken-1"><i class="material-icons">format_quote</i></a></li>
+					<li><a class="btn-floating green"><i class="material-icons">publish</i></a></li>
+					<li><a href="#SAIR" class="btn-floating red modal-trigger"><i class="material-icons">close</i></a></li>
+				</ul>
 			</div>
-			<div class="row">
-				<div class="col s12 m12 l12 ">
-					<div class="card cardDescricao blue-grey darken-1">
-						<div class="card-content white-text cardCollapsible">
-							<ul class="collapsible ulCollapsible">
-								<li>
-									<div class="collapsible-header"><b><span id="cardTitulo">Selecione um Card</span></b></div>
-									<div class="collapsible-body blue-grey lighten-2"><span id="cardConteudo"></span></div>
-								</li>								
-							</ul>
+			<div class="col s10 l4 push-l1 card z-depth-5 painelExibicao cards-principais">
+				<div class="row grapHeader"><h5 style="color: black;" class="container graphTitle">Crie e conecte seus cards !</h5></hr></div>
+				<div id="cy"></div>
+			</div>
+			<div class="col l6 push-l1 card z-depth-5 cards-principais">
+				<form action="controllers/criarNodos.php" method="POST">
+					<div class="row">
+						<input type="text" name="predecessor" hidden readonly id="predecessor">
+					</div>
+					<div class="row">
+						<div class="col s12 m12 l12 input-field">
+							<i class="material-icons prefix">title</i>
+							<input id="titulo" required type="text" name="titulo">
+							<label for="titulo">Titulo</label>
+						</div>
+					</div>
+					<div class="row">
+						<div class="col s12 m12 l12 input-field">
+							<i class="material-icons prefix">description</i>
+							<input id="descricao" required type="text" name="descricao">
+							<label for="descricao">Descrição</label>
+						</div>
+					</div>
+					<div class="row">
+						<div class="col l3 center divNode">
+							<button class="btn waves-effect waves-light" type="submit" name="submit" id="Node" disabled value="Node">Criar Card</button>
+						</div>
+						<div class="input-field container col s12 l6">
+							<select>
+								<option value="1">Option 1</option>
+								<option value="2">Option 2</option>
+								<option value="3">Option 3</option>
+							</select>
+						</div>
+						<div class="col l3 center divBranch">
+							<button class="btn waves-effect waves-light" type="button" id="trigger-merge" style="width: 100%;" value="Branch" disabled>Unir Ramificação</button>
+						</div>
+					</div>
+				</form>	
+				<div class="row">
+					<div class="container">
+						<div id="merge" style="display: none;">
+							<form action="controllers/criarNodos.php" method="POST">
+								<div class="row">
+									<div class="input-field col s12 m12 l6">
+										<!-- <b class="text-color"  style="background-color: #B8860B;">De:</b> -->
+										<!-- CAMPO QUE É MOSTRADO PARA O USUÁIO -->
+										<input type="text" readonly id="fromUsuario" name="fromUsuario" placeholder="de" />
+										<!-- CAMPO QUE É ENVIADO NO FORMULÁRIO -->
+										<input type="text" readonly hidden id="from" name="from"/>	
+									</div>
+									<div class="input-field col s12 m12 l6">
+										<!-- <b class="text-color"  style="background-color: #DAA520;">Para:</b> -->
+										<!-- CAMPO QUE É MOSTRADO PARA O USUÁIO -->
+										<input type="text" readonly name="forUsuario" id="forUsuario" placeholder="para" />
+										<!-- CAMPO QUE É ENVIADO NO FORMULÁRIO -->
+										<input type="text" readonly hidden name="for" id="for"/>
+									</div>
+								</div>
+								<div class="input-field">
+									<!-- <input class="btn waves-effect waves-light" type="button" id="limpar" value="Limpar"/> -->
+									<button class="btn waves-effect waves-light" type="button" id="limpar">Limpar</button>
+									<!-- <input class="btn waves-effect waves-light" type="submit" name="submit" value="Mesclar"/> -->
+									<button class="btn waves-effect waves-light" type="submit" name="submit" id="mesclar" disabled>Mesclar</button>
+								</div>
+							</form>
+						</div>	
+					</div>
+				</div>
+				<div class="row" id="merge2">
+					<div class="col l12 m6">
+						<div class="cardDescricao card blue-grey darken-1">
+							<div class="card-content white-text">
+								<span class="card-title" id="cardTitulo">Card Title</span>
+								<p id="cardConteudo">I am a very simple card. I am good at containing small bits of information.
+								I am convenient because I require little markup to use effectively.</p>
+							</div>
 						</div>
 					</div>
 				</div>
 			</div>
+			<!-- MODALS -->
+			<div id="PERFIL" class="modal bottom-sheet">
+				<div class="modal-content">
+					<h4><?php echo $_SESSION['nomeUsuario']; ?></h4>
+					<p>A bunch of text</p>
+				</div>
+				<div class="modal-footer">
+					<a href="#!" class="modal-close waves-effect waves-green btn-flat">Agree</a>
+				</div>
+			</div>
 		</div>
-		<div class="row" >
-			<div class="col l6 push-l1 cards-principais z-depth-5 card chat" style="background-color: #fff">
+		<div class="row">
+			<div class="col l12 chat">
 				<div class="row msgRecebidas" id="msgRecebidas">
 
 				</div>
+				<hr>
 				<div class="row msgEnviada">
-					<div class="input-field msgEnviadaCol">
+					<div class="col s12 msgEnviadaCol">
 						<form id="form">
-							<i class="material-icons right prefix">send</i>
-							<input  id="msgChat" type="text" name="mensagem" />
+							<div class="input-field">
+								<i class="material-icons right prefix">send</i>
+								<input  id="msgChat" type="text" name="mensagem" />	
+							</div>
 							<input type="text" id="usuario" hidden value=<?php echo $_SESSION['nomeUsuario'] ?> />
 							<input type="submit" name="submit" hidden value="enviar"/>
 						</form>
@@ -142,19 +154,7 @@
 				</div>
 			</div>
 		</div>
-		<!-- MODALS -->
-		<div id="PERFIL" class="modal bottom-sheet">
-			<div class="modal-content">
-				<h4><?php echo $_SESSION['nomeUsuario']; ?></h4>
-				<p>A bunch of text</p>
-			</div>
-			<div class="modal-footer">
-				<a href="#!" class="modal-close waves-effect waves-green btn-flat">Agree</a>
-			</div>
-		</div>
-		<!--  -->
 	</div>
-
 	<!-- CARREGA O GRÁFICO -->
 	<?php
 	include("graph.php");
@@ -163,7 +163,7 @@
 	<script src="js/controleInterface.js"></script>
 	<script src="https://www.gstatic.com/firebasejs/5.9.2/firebase.js"></script>
 	<!-- <script src="https://www.gstatic.com/firebasejs/4.8.1/firebase-messaging.js"></script> -->
-	
+
 	<script src="js/chat.js"></script>
 </body>
 </html>
@@ -174,5 +174,16 @@
 	<div class="modal-footer">
 		<a href="#" class="modal-close waves-effect waves-green btn-flat">Não</a>
 		<a href="controllers/logout.php" class="modal-close waves-effect waves-green btn-flat">Sim</a>
+	</div>
+</div>
+
+<!-- Modal Structure -->
+<div id="modal1" class="modal bottom-sheet">
+	<div class="modal-content">
+		<h4>Modal Header</h4>
+		<p>A bunch of text</p>
+	</div>
+	<div class="modal-footer">
+		<a href="#!" class="modal-close waves-effect waves-green btn-flat">Agree</a>
 	</div>
 </div>
