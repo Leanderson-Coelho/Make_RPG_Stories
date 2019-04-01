@@ -1,0 +1,5 @@
+﻿CREATE TABLE regiao(
+	id SERIAL PRIMARY KEY,
+	nome NOT NULL,
+	geom GEOMETRY NOT NULL
+)
