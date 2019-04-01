@@ -18,7 +18,7 @@
 					'text-opacity': 0.5,
 					'text-valign': 'center',
 					'text-halign': 'right',
-					'color': 'black',
+					'color': 'grey',
 					'font-size':8,
 					'background-color': '#007399',
 					'width': 10,

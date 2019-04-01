@@ -38,12 +38,11 @@
 				<ul>
 					<li><a class="btn-floating blue modal-trigger" data-target="PERFIL"><i class="material-icons">perm_identity</i></a></li>
 					<li><a class="btn-floating yellow darken-1"><i class="material-icons">format_quote</i></a></li>
-					<li><a class="btn-floating green"><i class="material-icons">publish</i></a></li>
 					<li><a href="#SAIR" class="btn-floating red modal-trigger"><i class="material-icons">close</i></a></li>
 				</ul>
 			</div>
 			<div class="col s10 l4 push-l1 card z-depth-5 painelExibicao cards-principais">
-				<div class="row grapHeader"><h5 style="color: black;" class="container graphTitle">Crie e conecte seus cards !</h5></hr></div>
+				<div class="row grapHeader"><h5 style="color: grey;" class="container graphTitle">Crie e conecte seus cards !</h5></hr></div>
 				<div id="cy"></div>
 			</div>
 			<div class="col l6 push-l1 card z-depth-5 cards-principais">
@@ -53,16 +52,16 @@
 					</div>
 					<div class="row">
 						<div class="col s12 m12 l12 input-field">
-							<i class="material-icons prefix">title</i>
+							<i class="material-icons grey-text prefix">title</i>
 							<input id="titulo" required type="text" name="titulo">
-							<label for="titulo">Titulo</label>
+							<label for="titulo" class="grey-text">Titulo</label>
 						</div>
 					</div>
 					<div class="row">
 						<div class="col s12 m12 l12 input-field">
-							<i class="material-icons prefix">description</i>
+							<i class="material-icons grey-text prefix">description</i>
 							<input id="descricao" required type="text" name="descricao">
-							<label for="descricao">Descrição</label>
+							<label for="descricao" class="grey-text">Descrição</label>
 						</div>
 					</div>
 					<div class="row">
@@ -144,8 +143,8 @@
 					<div class="col s12 msgEnviadaCol">
 						<form id="form">
 							<div class="input-field">
-								<i class="material-icons right prefix">send</i>
-								<input  id="msgChat" type="text" name="mensagem" />	
+								<i class="material-icons grey-text right prefix">send</i>
+								<input  id="msgChat" autocomplete="off" type="text" name="mensagem" />	
 							</div>
 							<input type="text" id="usuario" hidden value=<?php echo $_SESSION['nomeUsuario'] ?> />
 							<input type="submit" name="submit" hidden value="enviar"/>

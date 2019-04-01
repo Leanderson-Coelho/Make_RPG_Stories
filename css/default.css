@@ -1,7 +1,7 @@
 
 body {
-	background-color: #505050 !important;
-	/*background-image: url("../background.jpg");*/
+	/*background-color: #505050 !important;*/
+	background-image: url("../irnyo-let-me-keep-this-memory.jpg");
 }
 
 p {
@@ -38,13 +38,15 @@ textarea.materialize-textarea:focus:not([readonly]) {
 
 /* ALTERANDO COR PADRAO DOS BOTOES */
 .btn, .btn-large, .btn-small {
-	background-color: #26a69a;
+	background-color: #1B2631;
+	color: #E8E7E7;
 }
 
 /* ALTERANDO COR PADRAO DOS BOTOES HOVER */
 .btn:hover, .btn-large:hover, .btn-small:hover {
 	background-color: #990000 ;
 }
+
 
 /* LETRAS DO INPUT */
 .input-field > label {
