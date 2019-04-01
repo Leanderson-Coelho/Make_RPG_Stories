@@ -28,11 +28,11 @@
 				<form method="POST" action="controllers/controleSessao.php">
 					<div class="input-field inputLogin">
 						<i class="material-icons prefix">perm_identity</i>
-						<input type="email" name="login" id="login" placeholder="Email" />
+						<input type="email" name="login" id="login" placeholder="Email" required />
 					</div>
 					<div class="input-field inputLogin">
 						<i class="material-icons prefix">lock_outline</i>
-						<input type="password" name="senha" id="senha" placeholder="senha" />
+						<input type="password" name="senha" id="senha" placeholder="senha" required />
 					</div>
 					<div class="input-field">
 						<button class="btn waves-effect waves-light right" type="submit"><i class="material-icons right tiny">send</i>ENTRAR</button>
@@ -60,25 +60,25 @@
 							<div class="col l3"><label for="cEmail" class="labelCadastro">Email:</label></div>
 							<div class="col l9">
 								<div class="input-field input-field-cadastro">
-									<input id="cEmail" class="inputsCadastro" type="email" name="cLogin" >
+									<input id="cEmail" class="inputsCadastro" type="email" name="cLogin" required>
 								</div>
 							</div>
 							<div class="col l3"><label for="cSenha" class="labelCadastro">Senha:</label></div>
 							<div class="col l9">
 								<div class="input-field input-field-cadastro">
-									<input id="cSenha" class="inputsCadastro" type="password" name="cSenha" minlength="8" >
+									<input id="cSenha" class="inputsCadastro" type="password" name="cSenha" minlength="8" required>
 								</div>
 							</div>
 							<div class="col l3"><label for="cConfirmarSenha" class="labelCadastro">Confirmar Senha:</label></div>
 							<div class="col l9">
 								<div class="input-field input-field-cadastro">
-									<input id="cConfirmarSenha" class="inputsCadastro" type="password" minlength="8" name="confirmarSenha" ><span>Digite a senha novamente para efetuar o cadastro.</span>
+									<input id="cConfirmarSenha" class="inputsCadastro" type="password" minlength="8" name="confirmarSenha" required><span>Digite a senha novamente para efetuar o cadastro.</span>
 								</div>
 							</div>
 							<div class="col l3"><label for="cNomeUsuario" class="labelCadastro">Nome de usuário:</label></div>
 							<div class="col l9">
 								<div class="input-field input-field-cadastro">
-									<input id="cNomeUsuario" class="inputsCadastro" type="text" name="nomeUsuario" minlength="8" >
+									<input id="cNomeUsuario" class="inputsCadastro" type="text" name="nomeUsuario" minlength="8" required >
 								</div>
 							</div>
 							<div class="input-field">

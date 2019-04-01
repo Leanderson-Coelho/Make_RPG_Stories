@@ -23,11 +23,11 @@ document.getElementById("form").addEventListener("submit", (e)=>{
 function criarMsg(msgText, usuario){
 	counter+=1;
 	var msg={
-		"id":counter,
 		"usuario":usuario,
-		"msg":msgText
+		"msg":msgText,
+		"mestre": true
 	};
-	let db = firebase.database().ref('mensagens/'+counter);
+	let db = firebase.database().ref('mensagens/').push();
 	db.set(msg);
 	// document.getElementById('msgRecebidas').innerHTML = "";
 }
