@@ -3,7 +3,12 @@ require_once __DIR__ ."/../vendor/autoload.php";
 
 $login = $_POST['cLogin'];
 $senha = $_POST['cSenha'];
+$confirmarSenha = $_POST['confirmarSenha'];
 $nome = $_POST['nomeUsuario'];
+
+if($senha != $confirmarSenha){
+	return header('location:../login.php?msgErro=Senhas não se coincidem');
+}
 
 cadastrar($login,$senha,$nome);
 
