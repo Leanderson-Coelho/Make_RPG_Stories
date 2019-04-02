@@ -75,7 +75,7 @@
 		// ATIVA OU DESATIVA AS CORES POR SELEÇÃO
 		$("#trigger-merge").click(function(){
 			if(buttonDivMesclagem==false){
-				$("#Node").prop("disabled", true);
+				$("#Node, #delNode").prop("disabled", true);
 				$("#mesclar").prop("disabled", true);
 				buttonDivMesclagem = true;
 				limpar(false);
@@ -129,26 +129,28 @@
 
 		// LIMPA OS CAMPOS E CORES DOS NODOS
 		// PARAMETROS: $limparCores
-					// Se true atribui as cores padrões aos nodos
-					// Caso seja false limpa apenas os campos dos input's
-					function limpar(limparCores){
-						$("#mesclar").prop("disabled", true);
-						$("#from").val("");
-						$("#for").val("");
-						$("#fromUsuario").val("");
-						$("#forUsuario").val("");
-						if(limparCores==true){
-							if(lastFor!="")
-								lastFor.css("background-color", COR_PADRAO);
-							if(firstFrom!="")
-								firstFrom.css("background-color", COR_PADRAO);
-						}
-					}
+		// Se true atribui as cores padrões aos nodos
+		// Caso seja false limpa apenas os campos dos input's
+		function limpar(limparCores){
+			$("#mesclar").prop("disabled", true);
+			$("#from").val("");
+			$("#for").val("");
+			$("#fromUsuario").val("");
+			$("#forUsuario").val("");
+			if(limparCores==true){
+				if(lastFor!="")
+					lastFor.css("background-color", COR_PADRAO);
+				if(firstFrom!="")
+					firstFrom.css("background-color", COR_PADRAO);
+			}
+		}
+
 		//CONTROLE DE MERGE
 		var ultimoNo = "";
 		cy.on('click', 'node', function(evt){
 			// <START> seleciona o valor do predecessor caso o usuário crie um novo nodo
 			$("#predecessor").val(this.id());
+			$("#predecessor2").val(this.id());
 			$("#cardTitulo").text(this.data('titulo'));
 
 			$.ajax({
@@ -162,7 +164,7 @@
 			});
 			// VERIFICAÇÃO DE COR DO NODO
 			if(!buttonDivMesclagem){
-				$("#Node").prop("disabled", false);/////////////////////////
+				$("#Node, #delNode").prop("disabled", false);/////////////////////////
 				if(ultimoNo=="")
 					ultimoNo = this;
 				if(ultimoNo.id()!=this.id())
@@ -187,6 +189,5 @@
 
 			}
 		})
-
 	});
 </script>

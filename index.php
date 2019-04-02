@@ -114,9 +114,18 @@
 					<div class="col l12 m6">
 						<div class="cardDescricao card blue-grey darken-1">
 							<div class="card-content white-text">
-								<span class="card-title" id="cardTitulo">Card Title</span>
-								<p id="cardConteudo">I am a very simple card. I am good at containing small bits of information.
-								I am convenient because I require little markup to use effectively.</p>
+								<div class="row">
+									<div class="col s10">
+										<span class="card-title" id="cardTitulo">Selecione uma parte da história</span>	
+									</div>
+									<div class="col s1">
+										<form action="controllers/excluirNodos.php" method="POST">
+											<input type="text" name="predecessor2" hidden readonly id="predecessor2">
+											<button class="btn" id="delNode" type="submit" disabled><i class="material-icons">delete</i></button>
+										</form>
+									</div>
+								</div>
+								<p id="cardConteudo">Aqui será exibido a descrição</p>
 							</div>
 						</div>
 					</div>
