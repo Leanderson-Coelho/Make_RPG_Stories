@@ -1,5 +1,5 @@
-﻿CREATE TABLE regiao(
+create table regiao(
 	id SERIAL PRIMARY KEY,
-	nome NOT NULL,
+	nome varchar(50) not null,
 	geom GEOMETRY NOT NULL
 )
