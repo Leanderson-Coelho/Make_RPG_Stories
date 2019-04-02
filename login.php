@@ -39,7 +39,7 @@
 					</div>
 				</form>
 			</div>
-			<div class="red-text center"><h5><?php echo $_GET['msgErro']; ?></h5></div>
+			<div class=" center"><a class="red-text" href="login.php"><h5><?php echo $_GET['msgErro']; ?></h5><a/></div>
 			<div class="green-text center"><h5><?php echo $_GET['msg']; ?></h5></div>
 			<div class="row">
 				<div class="">
