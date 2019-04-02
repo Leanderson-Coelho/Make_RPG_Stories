@@ -115,6 +115,27 @@ nav{
 	margin-left: 20%;
 }
 
+.desenvolvedores{
+	color: #990000;
+}
+
+#firebase{
+	color: #ffca28;
+}
+
+#mongoDB{
+	color: green;
+}
+
+#postgres {
+	color: #4dd0e1;
+}
+
+.bds:hover{
+	background-color: #000;
+	padding: 2px;
+}
+
 /* USA QUANDO A TELA FOR DE CELULAR*/
 @media only screen and (max-width: 993px) {
 	.container {
