@@ -1,4 +1,5 @@
 <?php include("controllers/trava.php");?>
+<?php include("dao/mapa.php");?>
 <!DOCTYPE>
 <html>
 <head>
@@ -26,7 +27,23 @@
 	<!-- CUSTOM -->
 	<link rel="stylesheet" href="css/customMaterialize.css">
 	<!-- INICIALIZAÇÃO JQUERY DOS COMPONENTES MATERIALIZE -->
+	<!-- MAPA JS -->
+	<script src="js/mapa.js"></script>
 	<script src="js/initialization.js"></script>
+	<script type="text/javascript">
+		
+	</script>
+	<script type="text/javascript">
+		function exibirNome(evt){
+			var path = evt['path'];
+			var id = path[0].id;
+			$("#Cidade").text(id);
+		}
+
+		function removerNome(){
+			$("#Cidade").text("");
+		}
+	</script>
 </head>
 <body >
 	<div class="container">
@@ -68,12 +85,8 @@
 						<div class="col l3 center divNode">
 							<button class="btn waves-effect waves-light" type="submit" name="submit" id="Node" disabled value="Node">Criar Card</button>
 						</div>
-						<div class="input-field container col s12 l6">
-							<select>
-								<option value="1">Option 1</option>
-								<option value="2">Option 2</option>
-								<option value="3">Option 3</option>
-							</select>
+						<div class="input-field container col s12 l6 center">
+							<a href="#MAPA" id="botaoMapa" class="btn modal-trigger waves-effect waves-light"><i class="material-icons">map</i></a>
 						</div>
 						<div class="col l3 center divBranch">
 							<button class="btn waves-effect waves-light" type="button" id="trigger-merge" style="width: 100%;" value="Branch" disabled>Unir Ramificação</button>
@@ -174,6 +187,25 @@
 		<a href="#" class="modal-close waves-effect waves-green btn-flat">Não</a>
 		<a href="controllers/logout.php" class="modal-close waves-effect waves-green btn-flat">Sim</a>
 	</div>
+</div>
+
+<div id="MAPA" class="modal modal-fixed-footer">
+	<div class="modal-content">
+		<h4>Veja o mapa da sua história</h4>
+	</hr>
+	<h6>País: Diagrônia</h6>
+	<h6>Cidade: <b><span id="Cidade"></span></b></h6>
+	<svg id="mapaSvg" id="mapaSvg" viewBox="<?php echo $viewBox['svg']; ?>">
+		<?php 
+		while($row = pg_fetch_array($GeomCidades)){
+			echo "<path  id='".$row['nome']."' d='".$row['svg']."' stroke='black' stroke-width='0.005' fill='red' fill-opacity='' onmouseover='exibirNome(evt)' onmouseout='removerNome()'/>";
+		}
+		?>
+	</svg>
+</div>
+<div class="modal-footer">
+	<a href="#!" class="modal-close waves-effect waves-green btn-flat" >Fechar</a>
+</div>
 </div>
 
 <!-- Modal Structure -->

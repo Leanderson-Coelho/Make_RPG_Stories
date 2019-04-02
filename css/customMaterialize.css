@@ -109,6 +109,12 @@ nav{
 	background-color: #f57c00 ;
 } 
 
+#mapaSvg {
+	width: 50%;
+	height: 50%;
+	margin-left: 20%;
+}
+
 /* USA QUANDO A TELA FOR DE CELULAR*/
 @media only screen and (max-width: 993px) {
 	.container {
